@@ -1,5 +1,5 @@
-// Carvana Value Scorer — paste this entire file into the console on Carvana search results.
-// MIT License. See LICENSE in this repository.
+// Carvana Value Scorer — paste this entire file into the console on Carvana search results
+// MIT License
 (() => {
   // Your target cost in dollars per 10,000 estimated remaining miles.
   const TARGET = 1400;
