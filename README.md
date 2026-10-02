@@ -4,27 +4,33 @@ A browser script that scores Carvana listings for easy comparison. Just paste it
 
 Each scored listing gets a color-coded badge showing its cost per **10,000 estimated remaining miles** and how that compares with your target. Lower is better. Shipping is included in both the score and the displayed price; taxes and other fees are excluded.
 
-## Get started
+## Get Started
 
 1. Go to [Carvana](https://www.carvana.com/cars) and search for cars. Wait for the listings to load.
-2. Open [`carvana-score.js`](./carvana-score.js), select **Raw** if viewing it on GitHub, and copy the entire file.
+2. Open [`carvana-score.js`](./carvana-score.js), select **Raw** if viewing it on GitHub, and copy the entire code.
 3. Back on the Carvana results page, right-click an empty area and choose **Inspect**.
 4. Select the **Console** tab in the developer tools panel.
 5. Paste the script into the console and press **Enter**. Value badges will appear on eligible listings.
+6. Close the developer tools panel. The script will continue running as you navigate that tab (just don't hit refresh)
 
-You can close the developer tools panel once the script is running.
-
-## Keep your search page open
+## Keep Your Search Page Open
 
 Keep searching in the original tab and open individual cars separately:
 
 - **Windows or Linux:** hold **Ctrl** while clicking a car to open it in a new tab.
 - **Mac:** hold **Command (⌘)** while clicking a car to open it in a new tab.
-- For a separate window, right-click a car’s link and choose **Open Link in New Window**.
 
 The script watches for changes and applies scores as listings load in the original page. It stays active as long as that page remains loaded. **If you refresh, navigate away, or open a fresh search page, paste the script again.** It does not automatically run in other tabs or windows.
 
-## Set your mileage estimate and price target
+## Notes and Hidden Cars
+
+Use the comment bubble beside the heart to add notes, or **X** to dim a car you’ve ruled out. Click the restore arrow to unhide it. A small dot marks cars with notes.
+
+**Ctrl+Enter** (or **Command+Enter** on Mac) saves notes.
+
+Notes and hidden cars are remembered in this browser when you run the script again. They don’t sync across devices, and clearing Carvana’s site data erases them.
+
+## Set Your Mileage Estimate and Price Target
 
 Before running the script, adjust these two settings near the top of the file:
 
@@ -41,7 +47,7 @@ To choose your own baseline, divide your desired vehicle-plus-shipping budget by
 
 After changing either setting, copy and run the entire script again. Rerunning it replaces the existing badges.
 
-## Read the badges
+## Read the Badges
 
 The score is calculated as:
 
@@ -52,19 +58,18 @@ cost per 10,000 miles = (vehicle price + shipping) ÷ remaining miles × 10,000
 
 For a $15,000 car with $1,000 shipping and 100,000 miles on the odometer, the default 200,000-mile lifetime estimate gives a score of **$1,600 per 10,000 remaining miles**. Compared with the $1,400 target, the badge shows **+14%**.
 
-- **Negative percentage:** below your target; dark green.
-- **Zero percent:** approximately at your target, after rounding.
+- **Negative percentage:** below your target; blue (better than the baseline).
+- **Zero percent:** approximately at your target, after rounding; green.
 - **Positive percentage:** above your target; colors move from green through yellow and orange to red as the cost rises.
 
 The smaller dollar amount in the badge is the cost per 10,000 remaining miles. Percentages are rounded to whole numbers.
 
-## A few details
+## A Few Details
 
 - A `*` beside the displayed price means paid shipping has been added. Hover over the price for the breakdown.
 - Listings without readable price, mileage, or shipping information do not receive a score. Cars at or above your lifetime mileage estimate are also skipped.
 - The script hides some promotional, financing, and shipping rows on listing cards to simplify the comparison.
 - This compares purchase cost and estimated remaining mileage. It does not account for condition, maintenance, repairs, fuel, insurance, taxes, or other fees.
-- Carvana page changes may require updates to the script. Refreshing the page removes its changes.
 
 ## License
 
