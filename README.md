@@ -4,6 +4,8 @@ A browser script that scores Carvana listings for easy comparison. Just paste it
 
 Each scored listing gets a color-coded badge showing its cost per **10,000 estimated remaining miles** and how that compares with your target. Lower is better. Shipping is included in both the score and the displayed price; taxes and other fees are excluded.
 
+<img src="images/scoring-example.png" width="600">
+
 ## Get Started
 
 1. Go to [Carvana](https://www.carvana.com/cars) and search for cars. Wait for the listings to load.
